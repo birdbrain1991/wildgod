@@ -299,9 +299,6 @@ loadGLTFLoader(() => {
       modelGroup.position.sub(center.multiplyScalar(scale));
       modelGroup.position.y += 0.2;
 
-      // Tilt model 35 degrees toward camera
-      modelGroup.rotation.x = THREE.MathUtils.degToRad(35);
-
       // Apply dark red material tint to all meshes
       modelGroup.traverse(child => {
         if (child.isMesh) {
@@ -347,7 +344,7 @@ function animate() {
   const t = clock.getElapsedTime();
 
   // Elegant elliptical path — asymmetric so camera swings close and far
-  const angle = t * 0.12;
+  const angle = t * 0.15;
   const rx = 6.5;  // wide axis — far side
   const rz = 3.2;  // narrow axis — camera swoops close here
 
