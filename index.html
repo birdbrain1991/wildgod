@@ -345,16 +345,16 @@ function animate() {
 
   // Elegant elliptical path — asymmetric so camera swings close and far
   const angle = t * 0.15;
-  const rx = 6.5;  // wide axis — far side
-  const rz = 3.2;  // narrow axis — camera swoops close here
+  const rx = 5.5;  // wide axis
+  const rz = 4.2;  // narrow axis — less asymmetric, no more weird close passes
 
   camera.position.x = Math.sin(angle) * rx;
   camera.position.z = Math.cos(angle) * rz;
 
-  // Height cranes up and down slowly — elegant sweeping arc
+  // Height variation reduced — more horizontal, less crane
   camera.position.y = 0.8
-    + Math.sin(t * 0.17) * 2.2    // slow crane up/down
-    + Math.sin(t * 0.08) * 0.5;   // very slow breath
+    + Math.sin(t * 0.17) * 0.9
+    + Math.sin(t * 0.08) * 0.3;
 
   // Look target drifts slightly — camera attention wanders across the model
   const lookY = 0.1 + Math.sin(t * 0.11) * 0.4;
